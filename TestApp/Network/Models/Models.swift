@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  Models.swift
 //  TestApp
 //
 //  Created by Rita on 04.03.2026.
@@ -11,6 +11,10 @@ struct PostsResponce: Decodable {
     let posts: [Post]
 }
 
+struct PostDetailResponse: Decodable {
+    let post: Post
+}
+
 struct Post: Decodable {
     let postId: Int
     let timestamp: Int?
@@ -19,8 +23,6 @@ struct Post: Decodable {
     let postImage: String?
     let previewText: String?
     let likesCount: Int?
-    
-    var isExpanded: Bool = false
     
     enum CodingKeys: String, CodingKey {
         case postId
@@ -51,8 +53,4 @@ struct Post: Decodable {
         formatter.locale = Locale(identifier: "en_US")
         return formatter.string(from: date)
     }
-}
-
-struct PostDetailResponse: Decodable {
-    let post: Post
 }

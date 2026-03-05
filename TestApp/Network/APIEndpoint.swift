@@ -25,6 +25,6 @@ enum APIEndpoint {
     }
     
     var url: URL {
-        baseUrl.appendingPathComponent(path)
+        baseUrl.appending(path: path)
     }
 }
