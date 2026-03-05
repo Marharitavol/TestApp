@@ -22,6 +22,7 @@ final class PostsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navBarTitle.text = "Posts"
         view.backgroundColor = .white
         setupUI()
         createDataSource()
